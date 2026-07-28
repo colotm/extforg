@@ -1,20 +1,60 @@
 # extforge
 
-this project will no longer be maintained cause i dont have the willpower to do so and theres cooler stuff (penguinmod) to do
+# Snail-IDE GUI
 
-
-scratch-gui modified for use in [TurboWarp](https://turbowarp.org) then modified for use in [PenguinMod](https://studio.penguinmod.com) then modified for use in [Snail-IDE](https://snail-ide.js.org/) 😀
+scratch-gui modified for use in [TurboWarp](https://turbowarp.org) then modified for use in [PenguinMod](https://penguinmod.com) then modified for use in [Snail-IDE](https://js.org) 😀
 
 ## Setup
 
-See [TurboWarp Development Documentation](https://turbowarp.org) to setup the complete TurboWarp environment.
+To run Snail-IDE on your computer, follow these installation steps:
 
-If you just want to play with the GUI then it's the same process as upstream scratch-gui:
-
+### 1. Prerequisites (Node.js & nvm)
+You will need Node.js version 16 managed via Node Version Manager (nvm):
 ```bash
-npm install
-npm start
+nvm install 16
+nvm use 16
 ```
+*(Windows users: Please accept any UAC administrative prompts that appear)*
+
+### 2. Package Manager Setup
+You need `pnpm` to resolve dependencies correctly. Install it globally:
+```bash
+npm install -g pnpm
+```
+
+### 3. Clone & Install
+Clone the repository and install the project dependencies using the required hoist flag:
+```bash
+git clone https://github.com/snail-ide/snail-ide.github.io
+cd snail-ide.github.io
+pnpm i --shamefully-hoist
+```
+
+### 4. Running the Development Server
+Launch the local server using your preferred package manager:
+```bash
+pnpm start
+# OR
+npm start
+# OR
+yarn start
+```
+
+### 💡 Node 17+ Compatibility
+If you prefer to use Node.js version 17 or higher instead of version 16, you must pass the OpenSSL legacy provider flag to prevent cryptographic build errors.
+
+* **Linux / macOS / GitHub Codespaces:** Run this in your terminal before starting:
+  ```bash
+  export NODE_OPTIONS=--openssl-legacy-provider
+  ```
+* **Windows (Command Prompt):**
+  ```cmd
+  set NODE_OPTIONS=--openssl-legacy-provider
+  ```
+* **Windows (PowerShell):**
+  ```powershell
+  \$env:NODE_OPTIONS="--openssl-legacy-provider"
+  ```
 
 ## License
 
